@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main() {
-    int radius;
+    float radius;
     scanf("%f",&radius);
-    int area;
+    float area;
     area = 3.14 * radius * radius;
     printf("Area: %.2f",area);
     return 0;
