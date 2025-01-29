@@ -1,9 +1,9 @@
 #include <stdio.h>
 int main() {
     int radius;
-    scanf("%d",&radius);
+    scanf("%f",&radius);
     int area;
     area = 3.14 * radius * radius;
-    printf("Area: %d",area);
+    printf("Area: %.2f",area);
     return 0;
 }
