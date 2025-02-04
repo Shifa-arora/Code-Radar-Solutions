@@ -7,7 +7,7 @@ int main() {
             printf(" ");
         }
         for(int k=1; k<=2*i-1; k++){
-            char ch = a+64;
+            char ch = k+64;
             printf("%c ",ch);
         }
         printf("\n");
