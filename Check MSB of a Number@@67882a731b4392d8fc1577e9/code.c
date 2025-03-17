@@ -4,7 +4,7 @@ void checkMSB(int num) {
     if (num & 0x80000000)
         printf("Set\n");
     else
-        printf("MSB is not set (0)\n");
+        printf("Not Set\n");
 }
 
 int main() {
