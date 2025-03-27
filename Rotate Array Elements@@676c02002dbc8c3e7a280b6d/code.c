@@ -23,7 +23,7 @@ int main() {
     reverse(arr, 0, K-1);
     reverse(arr, K, N-1);
     for(int i=0; i<8; i++){
-        printf("%d ", arr[i]);
+        printf("%d\n", arr[i]);
     }
     return 0;
 }
