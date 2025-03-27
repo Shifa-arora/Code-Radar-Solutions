@@ -7,7 +7,7 @@ void reverse(int arr[], int i, int j){
         i++;
         j--;
     }
-    return ;
+    return reverse;
 }
 int main() {
     int N;
