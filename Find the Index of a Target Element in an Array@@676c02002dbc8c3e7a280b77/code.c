@@ -14,6 +14,7 @@ int main() {
         if (arr[i] == T) {
             printf("%d\n", i);
             found = 1;
+            break;
         }
     }
     if (!found) {
