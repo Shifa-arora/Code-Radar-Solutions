@@ -13,7 +13,7 @@ void decimalToBinary(unsigned int num) {
     }
 
     // Print binary number in correct order
-    printf("Binary representation: ");
+    // printf("Binary representation: ");
     if (i == 0) {
         printf("0"); // Special case for input 0
     } else {
