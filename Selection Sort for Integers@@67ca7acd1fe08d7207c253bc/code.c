@@ -29,25 +29,25 @@ void printArray(int arr[], int n) {
     printf("\n");
 }
 
-int main() {
-    int n;
+// int main() {
+//     int n;
 
-    // Input from user
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
+//     // Input from user
+//     // printf("Enter the number of elements: ");
+//     scanf("%d", &n);
 
-    int arr[n];
-    // printf("Enter %d integers: ", n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+//     int arr[n];
+//     // printf("Enter %d integers: ", n);
+//     for (int i = 0; i < n; i++) {
+//         scanf("%d", &arr[i]);
+//     }
 
-    // Perform Selection Sort
-    selectionSort(arr, n);
+//     // Perform Selection Sort
+//     selectionSort(arr, n);
 
-    // Print sorted array
-    // printf("Sorted array: ");
-    printArray(arr, n);
+//     // Print sorted array
+//     // printf("Sorted array: ");
+//     printArray(arr, n);
 
-    return 0;
-}
+//     return 0;
+// }
