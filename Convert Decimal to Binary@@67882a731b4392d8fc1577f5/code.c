@@ -28,7 +28,7 @@ int main() {
     unsigned int num;
 
     // Input from user
-    printf("Enter a decimal number: ");
+    // printf("Enter a decimal number: ");
     scanf("%u", &num);
 
     // Convert and display binary
