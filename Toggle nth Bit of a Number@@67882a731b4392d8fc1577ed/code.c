@@ -10,17 +10,17 @@ int main() {
     int n;
 
     // Input from user
-    printf("Enter a number: ");
+    // printf("Enter a number: ");
     scanf("%u", &num);
     
-    printf("Enter the bit position to toggle (0-based index): ");
+    // printf("Enter the bit position to toggle (0-based index): ");
     scanf("%d", &n);
 
     // Toggle the nth bit
     unsigned int result = toggleNthBit(num, n);
 
     // Display the result
-    printf("Number after toggling %dth bit: %u\n", n, result);
+    printf("%u\n", n, result);
 
     return 0;
 }
