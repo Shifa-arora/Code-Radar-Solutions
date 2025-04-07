@@ -24,23 +24,19 @@ int findFirstPeak(int arr[], int n) {
 int main() {
     int n;
 
-    // Input: number of elements
-    scanf("%d", &n);
+    scanf("%d", &n);  // Removed extra prompt
 
     int arr[n];
 
-    // Input: array elements
-    printf("%d", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-    // Find and print the first peak
     int peak = findFirstPeak(arr, n);
     if (peak != -1)
-        printf("%d", peak);
+        printf("%d\n", peak);  // Only print the peak value
     else
-        printf("No peak element found.\n");
+        printf("-1\n");
 
     return 0;
 }
