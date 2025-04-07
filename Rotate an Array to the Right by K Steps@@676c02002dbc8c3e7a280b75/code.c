@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Function to reverse part of the array
+// Function to reverse a portion of the array
 void reverse(int arr[], int start, int end) {
     while(start < end) {
         int temp = arr[start];
@@ -12,41 +12,41 @@ void reverse(int arr[], int start, int end) {
 }
 
 void rotateRight(int arr[], int n, int k) {
-    k = k % n;  // Normalize K
+    k = k % n; // Normalize k
 
-    // Reverse the entire array
+    // Step 1: Reverse the whole array
     reverse(arr, 0, n - 1);
 
-    // Reverse first k elements
+    // Step 2: Reverse first k elements
     reverse(arr, 0, k - 1);
 
-    // Reverse remaining n-k elements
+    // Step 3: Reverse remaining n-k elements
     reverse(arr, k, n - 1);
 }
 
 int main() {
     int n, k;
 
-    // Input size
+    // Input: size of array
     scanf("%d", &n);
+
     int arr[n];
 
-    // Input array
+    // Input: array elements
     for(int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-    // Input K
+    // Input: number of steps to rotate
     scanf("%d", &k);
 
-    // Rotate
+    // Rotate and print result
     rotateRight(arr, n, k);
 
-    // Output result
     for(int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
-    printf("\n");
 
+    printf("\n");
     return 0;
 }
