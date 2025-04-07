@@ -25,9 +25,9 @@ int main() {
 
     // Output result
     if(isSorted)
-        printf("The array is sorted in non-decreasing order.\n");
+        printf("Sorted\n");
     else
-        printf("The array is NOT sorted in non-decreasing order.\n");
+        printf("Not Sorted\n");
 
     return 0;
 }
