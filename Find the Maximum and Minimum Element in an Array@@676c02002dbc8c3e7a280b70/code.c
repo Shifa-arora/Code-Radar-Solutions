@@ -5,13 +5,12 @@ int main() {
     int n, i;
 
     // Input: number of elements
-    printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
 
     int arr[n];
 
     // Input: array elements
-    printf("Enter %d elements:\n", n);
+    printf("%d", n);
     for(i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
@@ -28,8 +27,9 @@ int main() {
     }
 
     // Output result
-    printf("Maximum element: %d\n", max);
-    printf("Minimum element: %d\n", min);
+    printf("%d ", min);
+    printf("%d ", max);
+    
 
     return 0;
 }
