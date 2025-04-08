@@ -1,12 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int num;
-    scanf("%d", &num);
+    unsigned int num;
+    scanf("%u", &num);
 
-    // Use 1 shifted left 31 times (MSB mask for 32-bit int)
-    int msb = (num & (1 << 31)) ? 1 : 0;
+    // Check the MSB (Most Significant Bit) of a 32-bit unsigned integer
+    if (num & (1U << 31)) {
+        printf("Set\n");
+    } else {
+        printf("Not Set\n");
+    }
 
-    printf("%d\n", msb);
     return 0;
 }
