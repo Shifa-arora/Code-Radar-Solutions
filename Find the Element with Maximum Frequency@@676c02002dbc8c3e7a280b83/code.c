@@ -4,14 +4,10 @@
 
 int main() {
     int n;
-
-    printf("Enter the size of the array: ");
     scanf("%d", &n);
 
     int arr[n];
     int freq[MAX] = {0};  // Frequency array initialized to 0
-
-    printf("Enter %d elements:\n", n);
     int maxVal = 0;
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
@@ -34,6 +30,6 @@ int main() {
         }
     }
 
-    printf("Element with maximum frequency: %d\n", result);
+    printf("%d\n", result);
     return 0;
 }
