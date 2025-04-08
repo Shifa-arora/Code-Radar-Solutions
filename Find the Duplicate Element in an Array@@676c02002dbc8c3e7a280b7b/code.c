@@ -1,31 +1,39 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     int n;
-    scanf("%d", &n); // Input size of array (including the duplicate)
+    if (scanf("%d", &n) != 1 || n <= 0) {
+        printf("Invalid input\n");
+        return 1;
+    }
 
-    int arr[n];
+    int* arr = (int*)malloc(n * sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    // Input elements
     for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        if (scanf("%d", &arr[i]) != 1) {
+            printf("Invalid element input\n");
+            free(arr);
+            return 1;
+        }
     }
 
-    // Floyd's Tortoise and Hare (Cycle Detection)
-    int slow = arr[0];
-    int fast = arr[0];
+    int maxFromRight = arr[n - 1];
+    printf("%d ", maxFromRight); // Last element is always a leader
 
-    // Step 1: Move slow by 1 and fast by 2 to find meeting point
-    do {
-        slow = arr[slow];
-        fast = arr[arr[fast]];
-    } while (slow != fast);
-
-    // Step 2: Move slow to start and find entrance to the cycle (duplicate)
-    slow = arr[0];
-    while (slow != fast) {
-        slow = arr[slow];
-        fast = arr[fast];
+    // Traverse from right to left
+    for (int i = n - 2; i >= 0; i--) {
+        if (arr[i] >= maxFromRight) {
+            maxFromRight = arr[i];
+            printf("%d ", arr[i]);
+        }
     }
 
-    printf("Duplicate element: %d\n", slow);
+    free(arr); // Free memory
     return 0;
 }
