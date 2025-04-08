@@ -3,37 +3,33 @@
 
 int main() {
     int n;
-    if (scanf("%d", &n) != 1 || n <= 0) {
-        printf("Invalid input\n");
-        return 1;
-    }
+    scanf("%d", &n);
 
     int* arr = (int*)malloc(n * sizeof(int));
-    if (arr == NULL) {
-        printf("Memory allocation failed\n");
-        return 1;
-    }
+    int* leaders = (int*)malloc(n * sizeof(int)); // at most n leaders
+    int count = 0;
 
-    // Input elements
     for (int i = 0; i < n; i++) {
-        if (scanf("%d", &arr[i]) != 1) {
-            printf("Invalid element input\n");
-            free(arr);
-            return 1;
-        }
+        scanf("%d", &arr[i]);
     }
 
-    int maxFromRight = arr[n - 1];
-    printf("%d ", maxFromRight); // Last element is always a leader
+    int maxRight = arr[n - 1];
+    leaders[count++] = maxRight;
 
-    // Traverse from right to left
+    // Traverse from right to left and collect leaders
     for (int i = n - 2; i >= 0; i--) {
-        if (arr[i] >= maxFromRight) {
-            maxFromRight = arr[i];
-            printf("%d ", arr[i]);
+        if (arr[i] >= maxRight) {
+            maxRight = arr[i];
+            leaders[count++] = arr[i];
         }
     }
 
-    free(arr); // Free memory
+    // Print leaders in original order (reverse the collected array)
+    for (int i = count - 1; i >= 0; i--) {
+        printf("%d ", leaders[i]);
+    }
+
+    free(arr);
+    free(leaders);
     return 0;
 }
