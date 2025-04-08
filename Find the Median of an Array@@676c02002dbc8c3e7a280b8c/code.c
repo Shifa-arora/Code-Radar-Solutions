@@ -27,7 +27,7 @@ int main() {
     } else {
         // Even size: average of two middle elements
         float median = (arr[n / 2 - 1] + arr[n / 2]) / 2.0;
-        printf("%.1f\n", median);
+        printf("%d\n", median);
     }
 
     return 0;
