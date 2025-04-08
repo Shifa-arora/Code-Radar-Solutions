@@ -20,7 +20,7 @@ int main() {
     if (pos == 0)
         printf("No set bits found.\n");
     else
-        printf("Position of lowest set bit: %d\n", pos);
+        printf("%d\n", pos-1);
 
     return 0;
 }
