@@ -1,29 +1,30 @@
 #include <stdio.h>
 
 int main() {
-    int n, largestEven = -1;
-
-    // Input size of the array
+    int n;
     scanf("%d", &n);
 
     int arr[n];
+    int largestEven;
+    int found = 0;
 
-    // Input elements
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
 
-        // Check if even and larger than current largestEven
-        if (arr[i] % 2 == 0 && arr[i] > largestEven) {
-            largestEven = arr[i];
+        if (arr[i] % 2 == 0) {
+            if (!found) {
+                largestEven = arr[i];
+                found = 1;
+            } else if (arr[i] > largestEven) {
+                largestEven = arr[i];
+            }
         }
     }
 
-    // Output result
-    if (largestEven == -1) {
-        printf("-1\n");
-    } else {
+    if (found)
         printf("%d\n", largestEven);
-    }
+    else
+        printf("-1\n");
 
     return 0;
 }
