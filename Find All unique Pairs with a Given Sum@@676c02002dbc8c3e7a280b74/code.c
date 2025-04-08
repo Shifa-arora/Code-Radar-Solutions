@@ -1,33 +1,58 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main() {
     int n, target;
-    
-    // Input size and target sum
-    scanf("%d %d", &n, &target);
+    scanf("%d", &n);
     
     int arr[n];
     
-    // Input array elements
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-    // Find unique pairs
+    scanf("%d", &target);
+
+    // Track if a pair was already printed
+    bool printed[n];
+    for (int i = 0; i < n; i++) {
+        printed[i] = false;
+    }
+
     for (int i = 0; i < n - 1; i++) {
         for (int j = i + 1; j < n; j++) {
             if (arr[i] + arr[j] == target) {
-                // Check for duplicates
-                int duplicate = 0;
-                for (int k = 0; k < i; k++) {
-                    if ((arr[k] == arr[i] && arr[j] == arr[k+1]) ||
-                        (arr[k] == arr[j] && arr[i] == arr[k+1])) {
-                        duplicate = 1;
-                        break;
-                    }
+                // Check if this pair was already printed
+                int a = arr[i];
+                int b = arr[j];
+
+                // Ensure smaller value is printed first
+                if (a > b) {
+                    int temp = a;
+                    a = b;
+                    b = temp;
                 }
-                if (!duplicate) {
-                    printf("%d %d\n", arr[i], arr[j]);
+
+                // Check for duplicate pair before printing
+                bool isDuplicate = false;
+                for (int k = 0; k < i; k++) {
+                    for (int l = k + 1; l < n; l++) {
+                        int x = arr[k], y = arr[l];
+                        if (x > y) {
+                            int temp = x;
+                            x = y;
+                            y = temp;
+                        }
+                        if (x == a && y == b && (k != i || l != j)) {
+                            isDuplicate = true;
+                            break;
+                        }
+                    }
+                    if (isDuplicate) break;
+                }
+
+                if (!isDuplicate) {
+                    printf("%d %d\n", a, b);
                 }
             }
         }
