@@ -2,27 +2,27 @@
 
 int main() {
     int n, k;
-    scanf("%d %d", &n, &k); // Accepting size and any other input (like in the test cases)
+    scanf("%d %d", &n, &k);
 
     int arr[n];
     int maxEven = -1;
+    int index = -1;
 
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
 
-        // Check for non-negative even number
-        if (arr[i] % 2 == 0 && arr[i] >= 0) {
+        if (arr[i] % 2 == 0 && arr[i] > k) {
             if (arr[i] > maxEven) {
                 maxEven = arr[i];
+                index = i;
             }
         }
     }
 
-    // Output result
-    if (maxEven == -1)
-        printf("0\n");  // As per expected output when no non-negative even number is found
+    if (index == -1)
+        printf("0\n");  // or whatever is expected when no such number exists
     else
-        printf("%d\n", maxEven);
+        printf("%d\n", index);
 
     return 0;
 }
