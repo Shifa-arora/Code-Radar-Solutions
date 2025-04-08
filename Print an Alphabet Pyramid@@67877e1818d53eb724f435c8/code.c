@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int n, num = 1;
+    int n;
     scanf("%d", &n); // Number of rows
 
     for (int i = 1; i <= n; i++) {
+        char ch = 'A';
         for (int j = 1; j <= i; j++) {
-            printf("%d ", num++);
+            printf("%c ", ch++);
         }
         printf("\n");
     }
