@@ -26,8 +26,9 @@ int main() {
 
     // Print leaders in original order (reverse the collected array)
     for (int i = count - 1; i >= 0; i--) {
-        printf("%d ", leaders[i]);
+        
     }
+    printf("%d ", leaders[i]);
 
     free(arr);
     free(leaders);
