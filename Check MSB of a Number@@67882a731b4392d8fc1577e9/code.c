@@ -1,18 +1,12 @@
 #include <stdio.h>
 
-void checkMSB(int num) {
-    if (num & 0x80000000)
-        printf("Set\n");
-    else
-        printf("Not Set\n");
-}
-
 int main() {
     int num;
-    printf("Enter a number: ");
     scanf("%d", &num);
 
-    checkMSB(num);
-    
+    // Use 1 shifted left 31 times (MSB mask for 32-bit int)
+    int msb = (num & (1 << 31)) ? 1 : 0;
+
+    printf("%d\n", msb);
     return 0;
 }
