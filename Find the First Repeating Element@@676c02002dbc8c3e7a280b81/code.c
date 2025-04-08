@@ -27,7 +27,7 @@ int main() {
     }
 
     if (minIndex == n) {
-        printf("No repeating elements found.\n");
+        printf("-1\n");
     } else {
         printf("%d\n", arr[minIndex]);
     }
