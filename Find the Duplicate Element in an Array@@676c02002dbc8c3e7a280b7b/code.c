@@ -17,16 +17,21 @@ int main() {
     leaders[count++] = maxRight;
 
     for (int i = n - 2; i >= 0; i--) {
-        if (arr[i] > maxRight) {  // changed from >= to >
+        if (arr[i] >= maxRight) {
             maxRight = arr[i];
             leaders[count++] = arr[i];
         }
     }
 
-    // Print in correct order
-    for (int i = count - 1; i >= 0; i--) {
-        printf("%d ", leaders[i]);
+    // Now filter only the *rightmost* minimum leader if it's repeated
+    int min = leaders[0];
+    for (int i = 1; i < count; i++) {
+        if (leaders[i] < min) {
+            min = leaders[i];
+        }
     }
+
+    printf("%d\n", min);
 
     free(arr);
     free(leaders);
