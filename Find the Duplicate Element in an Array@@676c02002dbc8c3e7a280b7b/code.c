@@ -13,17 +13,15 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    int maxRight = arr[n - 1];
-    leaders[count++] = maxRight;
-
-    for (int i = n - 2; i >= 0; i--) {
-        if (arr[i] >= maxRight) {
+    int maxRight = -1;
+    for (int i = n - 1; i >= 0; i--) {
+        if (arr[i] > maxRight) {
             maxRight = arr[i];
             leaders[count++] = arr[i];
         }
     }
 
-    // Now filter only the *rightmost* minimum leader if it's repeated
+    // Now find the minimum among the leaders
     int min = leaders[0];
     for (int i = 1; i < count; i++) {
         if (leaders[i] < min) {
