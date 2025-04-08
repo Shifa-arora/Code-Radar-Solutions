@@ -6,6 +6,6 @@ int main() {
 
     int result = num ^ (1 << n); // Toggle the nth bit
 
-    printf("Result after toggling %dth bit: %d\n", n, result);
+    printf("%d\n", n, result);
     return 0;
 }
