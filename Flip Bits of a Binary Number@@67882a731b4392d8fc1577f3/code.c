@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    unsigned int num;
-    scanf("%u", &num);
+    int num;
+    scanf("%d", &num);
 
-    unsigned int flipped = ~num;
+    int flipped = ~num;
 
-    printf("Original number : %u\n", num);
-    printf("Flipped  number : %u\n", flipped);
+    printf("%d\n", flipped); // Only output flipped value as per test case format
 
     return 0;
 }
