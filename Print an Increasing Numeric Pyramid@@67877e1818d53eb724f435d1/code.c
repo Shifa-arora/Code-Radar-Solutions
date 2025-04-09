@@ -7,12 +7,12 @@ int main() {
     for (int i = 1; i <= n; i++) {
         // Print initial spaces for alignment
         for (int s = 1; s <= n - i; s++) {
-            printf("  ");
+            printf(" ");
         }
 
         // Print numbers with extra spaces
         for (int j = 1; j <= i; j++) {
-            printf("%d   ", j);
+            printf("%d", j);
         }
 
         printf("\n");
